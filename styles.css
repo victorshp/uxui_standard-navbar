@@ -1,0 +1,181 @@
+/* =============================== COMMENT START - Styles that override everything (CSS Reset to maintain style in different browsers) =============================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* =========================================================================== COMMENT END =========================================================================== */
+
+li, a, button {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 16px;
+  color: #F6F7EB;
+  text-decoration: none;
+} 
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 5%;
+  background-color: #536878;
+}
+
+header .hamburger {
+  display: none;
+}
+
+header a:first-child {
+  cursor: pointer;
+}
+
+.navbar-links {
+  list-style: none;
+}
+
+.navbar-links li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+h3 {
+  margin: 10px 0px 0px 10px;
+  font-family: Arial;
+}
+
+/* =============================== COMMENT START - Transition for the header links =============================== */
+.navbar-links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.navbar-links li a:hover {
+  color: #998888;
+}
+/* ================================================= COMMENT END ================================================= */
+
+.contact button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.contact button:hover {
+  background-color: rgba(0, 136, 169, 0.8);  
+}
+
+/* =============================== COMMENT START - Dropdown items =============================== */
+.dropdown-btn {
+  border: none;
+  background-color: transparent;
+  font-family: Arial;
+  font-size: 16px;
+  transition: all 0.3s ease 0s;
+}
+
+/* Neat little down arrow icon on vanilla CSS*/
+.dropdown-btn::after {
+  display: inline-block;
+  margin-left: 0.225em;
+  vertical-align: 0.225em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+
+/* Hide the dropdown content on default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #536878;
+  padding: 15px 25px 15px 8px;
+}
+
+.dropdown-btn:hover {
+  color: #998888;
+}
+
+.dropdown-content a {
+  float: none;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* On hover, display the dropdown content as a black */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* ======================================== COMMENT END ======================================== */
+
+/* =============================== COMMENT START - The hamburger menu =============================== */
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 20px;
+  height: 3px;
+  background-color: #F6F7EB;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Make changes on hamburger when user clicks */
+.switch-patties .bar1 {
+  transform: rotate(-45deg) translate(-5px, 4px);
+}
+
+.switch-patties .bar2 {
+  opacity: 0;
+}
+
+.switch-patties .bar3 {
+  transform: rotate(45deg) translate(-6px, -5px);
+}
+
+/* ========================================== COMMENT END ========================================== */
+
+/* =============================== COMMENT START - Different menu for smaller screens (starting with screens equal to or smaller to tablets) =============================== */
+@media(max-width: 992px) {
+  /* Hide all except logo in small screens and show hamburger menu */
+  header {
+    /* First, override header's display flex, so the hamburger menu appears below everything */
+    display: block;
+  }
+  header .in-small {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .navbar-links, header .contact {
+    display: none;
+  }
+  header .hamburger {
+    display: block;
+  }
+
+  /* 'reveal' class is toggled through JS with user clicks on the hamburger it */
+  header.reveal .navbar-links, header.reveal .navbar-links li {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+  }
+  header.reveal .dropdown-content {
+    position: relative;
+    padding: 20px 25px 0px 8px;
+  }
+  header.reveal .dropdown-content a{
+    padding: 15px 16px;
+  }
+  header.reveal .contact {
+    display: block;
+    margin-top: 22px;
+  }
+}
+/* ============================================================================== COMMENT END ============================================================================== */
