@@ -6,7 +6,7 @@
 }
 /* =========================================================================== COMMENT END =========================================================================== */
 
-li, a, button {
+header li, header a, header button {
   font-family: Arial;
   font-weight: normal;
   font-size: 16px;
